@@ -1,7 +1,7 @@
 ## Hi there 👋
 I'm PepePL
 
-⚡Cool thing: [Click here](https://youtu.be/dQw4w9WgXcQ?si=hHhxm_H2XvDq2WJV)
+⚡Cool thing: [Click here](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
 <!--
 **Pepe-PL/Pepe-PL** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
