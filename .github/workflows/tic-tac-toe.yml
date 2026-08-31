@@ -1,0 +1,27 @@
+name: Play Tic-Tac-Toe
+
+# Uruchamiaj skrypt ZA KAŻDYM RAZEM, gdy ktoś otworzy nowe Issue
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  play:
+    runs-on: ubuntu-latest
+    name: Gra w Kółko i Krzyżyk
+    steps:
+      - uses: actions/checkout@v4
+      
+      # Gotowy silnik gry od społeczności
+      - uses: basselalaraaj/readme-tic-tac-toe@v3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      # Zapisanie nowego stanu planszy
+      - name: Zapisz zmiany w README
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add README.md
+          git commit -m "Wykonano nowy ruch w kółko i krzyżyk" || exit 0
+          git push
