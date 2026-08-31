@@ -1,9 +1,9 @@
 name: Play Tic-Tac-Toe
 
-# Uruchamiaj skrypt ZA KAŻDYM RAZEM, gdy ktoś otworzy nowe Issue
 on:
   issues:
     types: [opened]
+  workflow_dispatch: # Dodano: pozwala na ręczne wygenerowanie planszy
 
 jobs:
   play:
@@ -12,12 +12,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-      # Gotowy silnik gry od społeczności
       - uses: basselalaraaj/readme-tic-tac-toe@v3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
-      # Zapisanie nowego stanu planszy
       - name: Zapisz zmiany w README
         run: |
           git config user.name github-actions
